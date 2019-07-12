@@ -58,7 +58,7 @@ class Server:
     
     def executa(self):
         print('Start Server...')
-        print('IP Server: {} | PORT Server: {}'.format(HOST, self.PORT))
+        print(f'IP Server: {HOST} | PORT Server: {self.PORT}')
         try:
             while True: 
                 conteudo, infos = self.sock.accept()
@@ -66,7 +66,7 @@ class Server:
                 conn.daemon = True
                 conn.start()
                 self.conexoes.append(conteudo)
-                print('Conectado porta: {}'.format(infos[1]))
+                print(f'Conectado porta: {infos[1]}')
         except:
             pass
             
